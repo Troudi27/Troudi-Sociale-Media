@@ -1,5 +1,7 @@
 import "./Sidebar.css"
 import { Bookmark, Chat, Event, Group, HelpOutline, PlayCircleFilledOutlined, RssFeed, School, WorkOutline } from "@mui/icons-material"
+import {Users} from "./../../dummyData"
+import CloseFriend from "../closeFriend/CloseFriend"
 export default function Sidebar() {
   return (
     <div className="sidebar">
@@ -54,30 +56,9 @@ export default function Sidebar() {
         <button className="sidebarButton">Show More</button>
         <hr className="sidebarHr"/>
         <ul className="sidebarFriendList">
-            <li className="sidebarFriend">
-                <img src="/assets/person/2.jpeg" alt="" className="sidebarFriendImg" />
-                <span className="sidebarFrienName">Mr A</span>
-            </li>
-
-            <li className="sidebarFriend">
-                <img src="/assets/person/6.jpeg" alt="" className="sidebarFriendImg" />
-                <span className="sidebarFrienName">Mr B</span>
-            </li>
-
-            <li className="sidebarFriend">
-                <img src="/assets/person/3.jpeg" alt="" className="sidebarFriendImg" />
-                <span className="sidebarFrienName">Mr C</span>
-            </li>
-
-            <li className="sidebarFriend">
-                <img src="/assets/person/4.jpeg" alt="" className="sidebarFriendImg" />
-                <span className="sidebarFrienName">Mr D</span>
-            </li>
-
-            <li className="sidebarFriend">
-                <img src="/assets/person/5.jpeg" alt="" className="sidebarFriendImg" />
-                <span className="sidebarFrienName">Mr E</span>
-            </li>
+            {Users.map(u=>(
+                <CloseFriend key={u.id} user={u}/>
+            ))}
         </ul>
       </div>
     </div>
